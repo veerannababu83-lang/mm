@@ -1,0 +1,21 @@
+{
+  "d": {
+    "results": [
+      {
+        "userId": "43612",
+        "displayName": "Kunal Raghav",
+        "username": "KUNAL.RAGHAV@GOINDIGO.IN",
+        "dateOfBirth": "/Date(949363200000)/",
+        "defaultFullName": "Kunal Raghav",
+        "firstName": "Kunal",
+        "hireDate": "/Date(1565740800000)/",
+        "location": "Gurgaon (CORP)",
+        "lastName": "Raghav",
+        "assignmentUUID": "C5A25D8E3CEE4726B2E8A23F28A995DC",
+        "isAlumni": false,
+        "isPrimaryAssignment": true,
+        "totalTeamSize": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "version": "1.0",
+  "graph": {
+    "name": "successfactors_kg",
+    "engine": "apache-tinkerpop",
+    "poc": true
+  },
+  "entities": {
+    "Employee": {
+      "key": "userId",
+      "source": [
+        "User",
+        "EmpJob",
+        "PerPersonal",
+        "EmpJobRelationships",
+        "EmployeeTime",
+        "EmpPayCompNonRecurring"
+      ],
+      "properties": {
+        "userId": "string",
+        "displayName": "string",
+        "username": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "dateOfBirth": "datetime",
+        "hireDate": "datetime",
+        "location": "string",
+        "assignmentUUID": "string",
+        "isAlumni": "boolean",
+        "isPrimaryAssignment": "boolean",
+        "totalTeamSize": "integer"
+      }
+    },
+    "EmployeeJob": {
+      "key": "jobKey",
+      "source": [
+        "EmpJob"
+      ],
+      "properties": {
+        "userId": "string",
+        "personIdExternal": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "startDate": "datetime",
+        "customString1": "string",
+        "holidayCalendarCode": "string"
+      }
+    },
+    "PersonalInfo": {
+      "key": "personalKey",
+      "source": [
+        "PerPersonal"
+      ],
+      "properties": {
+        "personIdExternal": "string",
+        "startDate": "datetime",
+        "firstName": "string",
+        "lastName": "string",
+        "customString1": "string"
+      }
+    },
+    "EmployeeTime": {
+      "key": "externalCode",
+      "source": [
+        "EmployeeTime",
+        "WFREQUEST",
+        "Leave Apply"
+      ],
+      "properties": {
+        "externalCode": "string",
+        "entityUUID": "string",
+        "userId": "string",
+        "timeType": "string",
+        "startDate": "datetime",
+        "endDate": "datetime",
+        "startTime": "string",
+        "endTime": "string",
+        "approvalStatus": "string",
+        "quantityInHours": "number",
+        "quantityInDays": "number",
+        "cust_CSL_LR": "string",
+        "cust_LWP_LR": "string",
+        "cust_CompOffAgainst": "string",
+        "cust_DOB_Newborn": "string",
+        "cust_HalfDay": "string",
+        "cust_PL_LR": "string",
+        "cust_FL_LRR": "string",
+        "cust_OL_LR": "string",
+        "timeRecordOrigin": "string",
+        "workflowRequestId": "string",
+        "comment": "string",
+        "editable": "boolean",
+        "essMssEditable": "boolean"
+      }
+    },
+    "EmployeeRelationship": {
+      "key": "relationshipKey",
+      "source": [
+        "EmpJobRelationships"
+      ],
+      "properties": {
+        "relationshipType": "string",
+        "userId": "string",
+        "relUserId": "string",
+        "startDate": "datetime",
+        "endDate": "datetime"
+      }
+    },
+    "Compensation": {
+      "key": "compensationKey",
+      "source": [
+        "EmpPayCompNonRecurring",
+        "OT API"
+      ],
+      "properties": {
+        "compensationKey": "string",
+        "userId": "string",
+        "value": "number",
+        "customDouble2": "number",
+        "createdDateTime": "datetime",
+        "createdOn": "datetime"
+      }
+    },
+    "TimeAccountBalance": {
+      "key": "timeAccountKey",
+      "source": [
+        "timeAccountBalances"
+      ],
+      "properties": {
+        "timeAccountKey": "string",
+        "accountTypeCode": "string",
+        "accountTypeName": "string",
+        "unit": "string",
+        "bookableStartDate": "date",
+        "bookableEndDate": "date",
+        "available": "number",
+        "accrued": "number",
+        "earned": "number",
+        "paidOut": "number",
+        "planned": "number",
+        "taken": "number"
+      }
+    },
+    "HolidayCalendar": {
+      "key": "calendarCode",
+      "source": [
+        "EmpJob",
+        "HolidayAssignment"
+      ],
+      "properties": {
+        "calendarCode": "string"
+      }
+    },
+    "Holiday": {
+      "key": "externalCode",
+      "source": [
+        "HolidayAssignment",
+        "Get Holidays"
+      ],
+      "properties": {
+        "externalCode": "string",
+        "title": "string",
+        "startDate": "date",
+        "endDate": "date",
+        "duration": "number",
+        "timeUnit": "string",
+        "type": "string",
+        "status": "string"
+      }
+    },
+    "Candidate": {
+      "key": "candidateId",
+      "source": [
+        "Candidate"
+      ],
+      "properties": {
+        "candidateId": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "cellPhone": "string",
+        "primaryEmail": "string",
+        "country": "string",
+        "consentToMarketing": "boolean",
+        "dateOfBirth": "date"
+      },
+      "status": "blocked_in_current_fixture"
+    },
+    "JobApplication": {
+      "key": "applicationKey",
+      "source": [
+        "JobApplication"
+      ],
+      "properties": {
+        "applicationKey": "string",
+        "candidateId": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "cellPhone": "string",
+        "dateOfBirth": "date",
+        "adhaarnumber": "string"
+      },
+      "status": "response_empty_in_current_fixture"
+    },
+    "Policy": {
+      "key": "policyKey",
+      "source": [
+        "Policy List"
+      ],
+      "properties": {
+        "policyKey": "string",
+        "department": "string",
+        "title": "string",
+        "category": "string",
+        "grades": "string",
+        "group": "string",
+        "band": "string"
+      },
+      "status": "authentication_error_in_current_fixture"
+    }
+  },
+  "relationships": [
+    {
+      "label": "HAS_JOB",
+      "from": "Employee",
+      "to": "EmployeeJob",
+      "from_key": "userId",
+      "to_key": "jobKey"
+    },
+    {
+      "label": "HAS_PERSONAL_INFO",
+      "from": "Employee",
+      "to": "PersonalInfo",
+      "from_key": "userId",
+      "to_key": "personalKey",
+      "via": {
+        "source_field": "personIdExternal"
+      }
+    },
+    {
+      "label": "HAS_TIME_RECORD",
+      "from": "Employee",
+      "to": "EmployeeTime",
+      "from_key": "userId",
+      "to_key": "externalCode"
+    },
+    {
+      "label": "HAS_COMPENSATION",
+      "from": "Employee",
+      "to": "Compensation",
+      "from_key": "userId",
+      "to_key": "compensationKey"
+    },
+    {
+      "label": "HAS_RELATIONSHIP",
+      "from": "Employee",
+      "to": "Employee",
+      "from_key": "userId",
+      "to_key": "userId",
+      "via": {
+        "source_field": "relUserId"
+      }
+    },
+    {
+      "label": "ASSIGNED_TO",
+      "from": "EmployeeJob",
+      "to": "HolidayCalendar",
+      "from_key": "holidayCalendarCode",
+      "to_key": "calendarCode"
+    },
+    {
+      "label": "HAS_HOLIDAY",
+      "from": "HolidayCalendar",
+      "to": "Holiday",
+      "from_key": "calendarCode",
+      "to_key": "calendarCode"
+    },
+    {
+      "label": "HAS_APPLICATION",
+      "from": "Candidate",
+      "to": "JobApplication",
+      "from_key": "candidateId",
+      "to_key": "applicationKey"
+    },
+    {
+      "label": "HAS_TIME_BALANCE",
+      "from": "Employee",
+      "to": "TimeAccountBalance",
+      "from_key": "userId",
+      "to_key": "timeAccountKey"
+    }
+  ],
+  "notes": [
+    "relationshipType 168085 is not renamed to REPORTS_TO until business semantics are verified.",
+    "Candidate/JobApplication/Policy are schema placeholders because current uploaded responses are blocked/empty/auth-failed.",
+    "Do not store credentials, cookies, access tokens, or authorization headers in graph properties."
+  ]
+}

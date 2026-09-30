@@ -1,0 +1,27 @@
+{
+"d" : {
+"results" : [
+{
+"__metadata" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/EmpJobRelationships(relationshipType='168085',startDate=datetime'2024-04-15T00:00:00',userId='43612')", "type" : "SFOData.EmpJobRelationships"
+}, "relationshipType" : "168085", "userId" : "43612", "startDate" : "\/Date(1713139200000)\/", "lastModifiedDateTime" : "\/Date(1713765832000+0000)\/", "endDate" : "\/Date(253402214400000)\/", "lastModifiedBy" : "99999933", "createdDateTime" : "\/Date(1713765832000+0000)\/", "createdOn" : "\/Date(1713765832000)\/", "lastModifiedOn" : "\/Date(1713765832000)\/", "createdBy" : "99999933", "relUserId" : "69769", "userNav" : {
+"__deferred" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/EmpJobRelationships(relationshipType='168085',startDate=datetime'2024-04-15T00:00:00',userId='43612')/userNav"
+}
+}, "employmentNav" : {
+"__deferred" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/EmpJobRelationships(relationshipType='168085',startDate=datetime'2024-04-15T00:00:00',userId='43612')/employmentNav"
+}
+}, "relEmploymentNav" : {
+"__deferred" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/EmpJobRelationships(relationshipType='168085',startDate=datetime'2024-04-15T00:00:00',userId='43612')/relEmploymentNav"
+}
+}, "relUserNav" : null, "relationshipTypeNav" : {
+"__deferred" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/EmpJobRelationships(relationshipType='168085',startDate=datetime'2024-04-15T00:00:00',userId='43612')/relationshipTypeNav"
+}
+}
+}
+]
+}
+}

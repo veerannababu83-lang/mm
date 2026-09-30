@@ -1,0 +1,11 @@
+{
+"d" : {
+"results" : [
+{
+"__metadata" : {
+"uri" : "https://api-in10-preview.hr.cloud.sap/odata/v2/PerPersonal(personIdExternal='43612',startDate=datetime'2025-03-12T00:00:00')", "type" : "SFOData.PerPersonal"
+}, "personIdExternal" : "43612", "startDate" : "\/Date(1741737600000)\/", "firstName" : "Kunal", "lastName" : "Raghav", "customString1" : null
+}
+]
+}
+}

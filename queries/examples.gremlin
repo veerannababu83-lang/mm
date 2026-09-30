@@ -1,0 +1,22 @@
+
+# 1. Employee -> job
+g.V().hasLabel('Employee').has('userId','43612').out('HAS_JOB').valueMap()
+
+# 2. Employee -> personal info
+g.V().hasLabel('Employee').has('userId','43612').out('HAS_PERSONAL_INFO').valueMap()
+
+# 3. Employee -> leave/time records
+g.V().hasLabel('Employee').has('userId','43612').out('HAS_TIME_RECORD').valueMap(
+    'approvalStatus','startDate','endDate','quantityInDays','quantityInHours'
+)
+
+# 4. Employee relationships
+g.V().hasLabel('Employee').has('userId','43612').out('HAS_RELATIONSHIP').valueMap(
+    'userId','displayName','firstName','lastName'
+)
+
+# 5. Holidays
+g.V().hasLabel('Holiday').has('type','PUBLIC_HOLIDAY').valueMap()
+
+# 6. Full employee neighborhood
+g.V().hasLabel('Employee').has('userId','43612').bothE().otherV().path()
